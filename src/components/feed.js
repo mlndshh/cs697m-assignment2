@@ -31,20 +31,6 @@ class Feed extends Component {
           console.log(data.joke)
           console.log("asdasd", this.state)
         });
-
-      fetch('https://inspiration.goprogram.ai/')
-        .then(response => response.json())
-        .then(data => {
-          this.setState({
-            quote: data.quote,
-            isQuote: true
-          })
-          console.log(data.joke)
-          console.log("asdasd", this.state)
-        })
-        .catch(err => {
-          console.log('err', err)
-        })
   }
 
   render() {
@@ -138,17 +124,6 @@ class Feed extends Component {
             <iframe style={{display:"block"}}  width="350" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </>
           }
-          image="https://mlndshh.github.io/images/avatar.jpg"/>
-          <TweetBody 
-          name="Milind Shah"
-          handle="@mlndshh"
-          tweet={
-            <>
-            <p>Hey there, here's a motivational quote, to uh, well, get you motivated!.</p>
-            <p><i>{ this.state.isQuote && this.state.quote}</i></p>
-            <p>Refresh the page to get a new one! :)</p>
-            </>
-          }          
           image="https://mlndshh.github.io/images/avatar.jpg"/>
           <TweetBody 
           name="Milind Shah"
