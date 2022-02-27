@@ -7,10 +7,7 @@ class Feed extends Component {
     super(props)
     this.state = {
       joke: "",
-      isLoaded: false,
-      quote: "",
-      isQuote: false,
-      author: ""
+      isLoaded: false
     }
   }
 
@@ -29,21 +26,19 @@ class Feed extends Component {
             isLoaded: true
           })
           console.log(data.joke)
-          console.log("asdasd", this.state)
         });
   }
 
   render() {
     return (
       <div className="main-body">
-        {console.log("AAAAAAA", this.state)}
         <TweetBody 
           name="Milind Shah"
           handle="@mlndshh"
           tweet={
             <>
             <p>Hello Visitor. Before I show you one-way tweets meant for only my mind and me, here's a dad joke to cheer up.</p>
-            <p><i>{ this.state.isQuote && this.state.quote}</i></p>
+            <p><i>{ this.state.isLoaded && this.state.joke}</i></p>
             <p>I know I could have used little pick-me-ups like these during the week. Refresh the page to get a new one! :)</p>
             </>
           }          
