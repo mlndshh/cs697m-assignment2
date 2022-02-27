@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TweetBody } from './components/tweet.js'
 import {PullToRefresh, PullDownContent, ReleaseContent, RefreshContent} from "react-js-pull-to-refresh";
+import Feed from './components/feed.js';
 import './App.css';
 
 class App extends Component {
@@ -50,16 +51,9 @@ class App extends Component {
 
   render() {
     return (
-      <PullToRefresh
-      pullDownContent={<PullDownContent />}
-      releaseContent={<ReleaseContent />}
-      refreshContent={<RefreshContent />}
-      pullDownThreshold={2}
-      onRefresh={this.handleRefresh}
-      triggerHeight={50}
-      backgroundColor='black'>
+
       <div className="main-body">
-        {[...this.state.users].map((user, index) => {
+        {/*...this.state.users].map((user, index) => {
           let name = `${user.name.first} ${user.name.last}`
           let handle = `@${user.name.first}${user.name.last}`
           let image = user.image
@@ -73,9 +67,11 @@ class App extends Component {
               tweet={tweet}
               image={image} />
           )
-        })}      
+        })*/
+        <Feed />
+        }      
       </div>
-      </PullToRefresh>
+
     );
   }
 }
